@@ -44,6 +44,13 @@ Agents run inside the herdr app also get these env vars:
 
 The user did not say yet what these could be used for.
 
+Agents run inside T3 Code also get:
+
+- `T3CODE_CLI_PATH` (path to the `t3` CLI, e.g. `~/.t3/bin/t3`)
+- `T3CODE_THREAD_ID` (a UUID)
+
+The user did not say what these could be used for either.
+
 The user's takeaway: `mfleet` can recognize the session implicitly from
 these, so agents don't need to pass `--current-session-id` every time.
 
