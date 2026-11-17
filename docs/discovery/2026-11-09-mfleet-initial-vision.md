@@ -40,6 +40,15 @@ Rough sketch of the config layout (added 2026-11-09):
 └── secrets.sops.yml
 ```
 
+## Constraints and preferences
+
+- (added 2026-11-17) `mfleet` must not depend on any terminal multiplexer
+  such as herdr. Agents should be able to use it the same way inside
+  herdr, t3-code, the Claude/Codex desktop apps, or a plain Ghostty
+  terminal session.
+- (added 2026-11-17) The only environment `mfleet` should rely on is the
+  harness it runs in: the Claude Code, Codex, and Pi CLIs.
+
 ## Open questions
 
 - What should the tool look like? The user doesn't know yet.

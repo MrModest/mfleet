@@ -47,6 +47,18 @@ The user did not say yet what these could be used for.
 The user's takeaway: `mfleet` can recognize the session implicitly from
 these, so agents don't need to pass `--current-session-id` every time.
 
+2026-11-17: the user doesn't want `mfleet` to depend on any multiplexer
+(herdr or others); it should work inside herdr, t3-code, the Claude/Codex
+desktop apps, or a plain Ghostty terminal. The only environment it should
+rely on is the harness it runs in (Claude Code, Codex, Pi CLIs), so the
+herdr `HC_*` vars above are not something to depend on. See
+[the vision note](2026-11-09-mfleet-initial-vision.md).
+
+2026-11-17: for tasks, the user dropped per-session visibility. Tasks are
+shared so agents can work on them in parallel; the session ID only records
+the task's creator. See
+[Tasks subcommand for agents](2026-11-17-agent-tasks-subcommand.md).
+
 ## Related
 
 - [Tasks subcommand for agents](2026-11-17-agent-tasks-subcommand.md)
