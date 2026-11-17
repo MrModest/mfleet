@@ -47,5 +47,7 @@ the harness it runs in (Claude Code, Codex, Pi).
 ## Related
 
 - [Event log idea, borrowed from agent-fleet](2026-11-17-event-log-from-agent-fleet.md)
+- [Reduce tool-output tokens in the agent's context](2026-11-17-context-savings-via-hooks.md),
+  another use for harness hooks
 - [Session-aware CLI calls](2026-11-17-session-aware-cli-calls.md)
 - [Define specialized agents once and spawn them from a session](2026-11-09-specialized-agents.md)
