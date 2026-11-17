@@ -19,6 +19,7 @@ Agents can add, update, delete, and check tasks through the CLI.
   };
 
   type Task = {
+    kind: "agent" | "human";
     createdBy: TaskCreator;
     parent?: TaskId;        // parent task
     children: TaskId[];     // child tasks
@@ -26,6 +27,15 @@ Agents can add, update, delete, and check tasks through the CLI.
     blockedBy: TaskId[];    // other tasks' IDs
   };
   ```
+
+- (added 2026-11-17) `kind: human | agent`. Most tasks are agent tasks.
+  When an agent is blocked by something only a human can do, it creates a
+  `human` task (and is blocked by it). The agent still tracks it:
+  1. Human asks the agent "what is blocking you?"
+  2. Agent fetches the task and answers "I'm waiting for you to do this
+     and this".
+  3. Human does it and tells the agent "I've done this and this".
+  4. Agent marks the `human` task `done` and is unblocked.
 
 ## Additional observations
 
