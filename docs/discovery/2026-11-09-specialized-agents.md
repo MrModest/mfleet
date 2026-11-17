@@ -25,6 +25,14 @@ with a specialized agent.
   mfleet agents spawn web-ui-tester --parent-session=<sessionId>
   ```
 
+## Additional observations
+
+2026-11-17: `--parent-session` shouldn't be needed, since the parent
+session can be derived from the env vars the harness sets (see
+[Session-aware CLI calls](2026-11-17-session-aware-cli-calls.md)). The
+example would become `mfleet agents spawn web-ui-tester`.
+
 ## Related
 
+- [Session-aware CLI calls](2026-11-17-session-aware-cli-calls.md)
 - [Initial vision](2026-11-09-mfleet-initial-vision.md)
