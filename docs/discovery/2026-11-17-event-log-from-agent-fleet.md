@@ -23,7 +23,7 @@ How agent-fleet does it:
   hub). Current state is not stored; it is derived by replaying events in
   order through a pure reducer (`State::fold`).
 - Common envelope on every event:
-  - `id`: ULID chosen by the writer, so a duplicate append does nothing
+  - `id`: [ULID](https://github.com/ulid/spec) chosen by the writer, so a duplicate append does nothing
     and replay is safe;
   - `v`: schema version of the event type;
   - `ts`, `actor` (`host` / `agent` / `human`), `project`;
@@ -97,7 +97,7 @@ ID formats (human-readable names, not UUIDs):
   fleet-wide, not scoped to a session; ownership is a separate field
   pointing to an agent ID.
 - `human:board`: the human answering through the web board.
-- Event `id`: a ULID (26 chars, time-sortable), referenced by `re`.
+- Event `id`: a [ULID](https://github.com/ulid/spec) (26 chars, time-sortable), referenced by `re`.
 
 ## Related
 
