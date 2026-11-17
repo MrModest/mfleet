@@ -46,3 +46,4 @@ user re-logging in by hand or finding out mid-task.
 
 - [Adding a new host for agents takes manual setup](2026-11-09-new-host-setup.md)
 - [Secrets declared once, unlocked through 1Password](2026-11-09-secrets-via-sops-and-1password.md)
+- [Platform-specific connectors with filtering for searching](2026-11-15-platform-search-connectors.md)
