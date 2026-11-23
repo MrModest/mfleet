@@ -32,10 +32,10 @@ In the end it should work, and be easy to maintain and improve.
 
 | Area | Subcommands mentioned so far | Note |
 |---|---|---|
-| Agents, sessions, roles | `mfleet agents spawn`, `mfleet agents <agent-id> wait`, `mfleet agents ask` | [Agents, sessions, and roles](2026-11-23-agents-sessions-and-roles.md) |
+| Agents, sessions, roles | `mfleet agents spawn`, `mfleet agents wait <agent-id>`, `mfleet agents ask <agent-id>` | [Agents, sessions, and roles](2026-11-23-agents-sessions-and-roles.md) |
 | Tasks | `mfleet tasks` | [Tasks shared between agents and humans](2026-11-23-tasks.md) |
 | Harness hooks: status, safety, context savings | `mfleet hooks` (maybe) | [Harness hooks](2026-11-23-harness-hooks.md) |
-| Connectors, credentials, secrets, new hosts | `mfleet connect` | [Connectors, credentials, and secrets](2026-11-23-connectors-credentials-and-secrets.md) |
+| Connectors, credentials, secrets, new hosts | `mfleet connectors` | [Connectors, credentials, and secrets](2026-11-23-connectors-credentials-and-secrets.md) |
 | Skills | `mfleet skills` | [Skills](2026-11-23-skills.md) |
 | Code index | `mfleet index` | [Code index](2026-11-23-code-index.md) |
 | Event log (reference) | | [Event log, as agent-fleet does it](2026-11-23-event-log-reference.md) |
