@@ -1,19 +1,19 @@
-# Event log idea, borrowed from agent-fleet
+# Event log, as agent-fleet does it
 
-Captured: 2026-11-17
+Captured: 2026-11-23
 
 ## Context
 
-The user asked to look at
+The user looked at
 [kirmalyshev/agent-fleet](https://github.com/kirmalyshev/agent-fleet)
 (researched only through DeepWiki) for things worth borrowing for
-`mfleet`. The user asked to capture its event log approach as a note.
+`mfleet`, and wanted its event log approach captured.
 
 This is how agent-fleet does it. It is a reference, not a decision on how
 `mfleet` should work. agent-fleet is built around herdr (identity, presence
 and message delivery all go through it); the user doesn't want `mfleet` to
-depend on any multiplexer (see
-[the vision note](2026-11-09-mfleet-initial-vision.md)).
+depend on any multiplexer (see the
+[overview](2026-11-23-mfleet-overview.md)).
 
 ## Ideas
 
@@ -29,8 +29,8 @@ How agent-fleet does it:
   - `ts`, `actor` (`host` / `agent` / `human`), `project`;
   - optional `task` and `re` (reference to an earlier event's `id`);
   - `type` plus type-specific `data`.
-- `re` links follow-ups to their cause: `spawn.result` → `spawn.requested`,
-  `msg.delivered` → `msg.sent`, `ask.answered` → `ask.raised`.
+- `re` links follow-ups to their cause: `spawn.result` points to `spawn.requested`,
+  `msg.delivered` to `msg.sent`, and `ask.answered` to `ask.raised`.
 - Event type groups: agent presence/state, tasks and dependencies,
   blockers, asks to the human, messages, spawn, stuck/signals, processes
   and worktrees, resources, self-update.
@@ -101,7 +101,8 @@ ID formats (human-readable names, not UUIDs):
 
 ## Related
 
-- [Session-aware CLI calls](2026-11-17-session-aware-cli-calls.md),
-  which wants audit across all subcommands
-- [Tasks subcommand for agents](2026-11-17-agent-tasks-subcommand.md)
-- [Define specialized agents once and spawn them from a session](2026-11-09-specialized-agents.md)
+- [Agents, sessions, and roles](2026-11-23-agents-sessions-and-roles.md),
+  which wants audit across all subcommands and covers spawning
+- [Tasks shared between agents and humans](2026-11-23-tasks.md)
+- [Harness hooks](2026-11-23-harness-hooks.md), which replaces herdr as
+  the source of agent status
