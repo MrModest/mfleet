@@ -24,6 +24,18 @@ the agent runs in.
   version; `mfleet` should use the same rtk under the hood.
 - Only the harness environment can be relied on (Claude Code, Codex, Pi);
   see [the vision note](2026-11-09-mfleet-initial-vision.md).
+- (added 2026-11-21) An explicit env var to switch off context
+  interception, e.g. `MFLEET_CONTEXT_HOOK=0`, so tool output goes through
+  as is. For when context processing is half-broken but the rest of the
+  CLI should still work. Inspired by Atlas's `ATLAS_RAW=1`, but the user
+  wants a more explicit name.
+
+## Ideas
+
+- (added 2026-11-23) Measure the compression percentage by comparing the
+  raw output of an MCP tool call or Bash command with the compressed
+  output actually sent to the agent. (Atlas instead estimates savings
+  against a "what the agent would have read without Atlas" baseline.)
 
 ## How others do it
 
