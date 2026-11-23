@@ -72,8 +72,8 @@ Agent files are Markdown with frontmatter (see
 The user agrees with what Atlas and agent-fleet both do:
 
 - unknown or misspelled config keys are errors;
-- config lives in the standard user config folder (`~/.config/<tool>` on
-  Linux);
+- config lives in the standard user config folder (`$XDG_CONFIG_HOME/<tool>` on
+  Linux and macOS);
 - an env var can point to another config folder.
 
 How config is layered is not decided. Two ideas:
